@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Account</title>
+    <style>
+        body {
+            background-color: mediumseagreen;
+            text-align: center;
+        }
+
+        form {
+            color: #fff;
+        }
+
+        input {
+            color: black;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <form action="account.php" method="post">
+        <h1>Welcome</h1><br>
+        $email = $_POST['email']
+        <input type="checkbox" onclick="myFunction()">Show Password
+
+        <script>
+            function myFunction() {
+                var x = document.getElementById("myInput");
+                if (x.type === "password") {
+                    x.type = "text";
+                } else {
+                    x.type = "password";
+                }
+            }
+        </script>
+</body>
+
+</html>

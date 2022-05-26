@@ -1,0 +1,1 @@
+<input type="password" name="f_pwd" style="width: 100%">
