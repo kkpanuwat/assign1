@@ -6,7 +6,6 @@ if (isset($_POST['submit'])) {
   $email = $_POST['email'];
   $pass = $_POST['pass'];
 }
-
 ?>
 
 <!DOCTYPE HTML>
@@ -36,7 +35,6 @@ if (isset($_POST['submit'])) {
 
   <?php
   echo "<h1> Welcome </h1>";
-  // $stars = starToggle($pass);
   if (isset($_POST['submit'])) {
     echo "Username : " . $email . "<br>";
     echo "Password : " . $pass;
@@ -45,19 +43,25 @@ if (isset($_POST['submit'])) {
 
   <!-- add code here -->
   <script>
+    // set default flag false => * : true => real password
     let hide = false;
+    // store value to variable
     let globalPassword = "<?php echo $pass ?>"
+
     function togglePassword() {
+      // use ternary operator to show correct display
       hide ? document.getElementById('showPassword').innerText = globalPassword : document.getElementById('showPassword').innerText = "*".repeat(globalPassword.length)
     }
   </script>
 
+  <!-- Start show password -->
+  <!-- use DOM to update display -->
   <div id="showPassword"></div>
-
-  <!-- end show result -->
-
+  <!-- end show password-->
 
 
+  <!-- 1. update flag to show correct display -->
+  <!-- 2. call toggle function -->
   <button id="showPassword" onclick="hide = !hide;togglePassword()">show</button>
   <div class=butt>
     <button onclick="history.back()">Back</button>
