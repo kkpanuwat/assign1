@@ -39,6 +39,7 @@ session_start();
     echo "Password : " . $pass;
   }
   ?>
+  <!-- Review code -->
   <div id="showPassword"><?php
                           echo starToggle($pass) ?></div>
   <button id="showPassword" onclick="starToggle($pass)">show</button>
