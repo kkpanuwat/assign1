@@ -47,7 +47,6 @@ if (isset($_POST['submit'])) {
   <script>
     let hide = false;
     let globalPassword = "<?php echo $pass ?>"
-
     function togglePassword() {
       hide ? document.getElementById('showPassword').innerText = globalPassword : document.getElementById('showPassword').innerText = "*".repeat(globalPassword.length)
     }
@@ -59,7 +58,7 @@ if (isset($_POST['submit'])) {
 
 
 
-  <button id="showPassword" onclick="hide = !hide;console.log(hide);togglePassword()">show</button>
+  <button id="showPassword" onclick="hide = !hide;togglePassword()">show</button>
   <div class=butt>
     <button onclick="history.back()">Back</button>
   </div>
