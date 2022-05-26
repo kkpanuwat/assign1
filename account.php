@@ -32,6 +32,7 @@ if (isset($_POST['submit'])) {
 </head>
 
 <!-- onload page success call toggle function -->
+
 <body onload="togglePassword()">
 
   <?php
@@ -51,7 +52,7 @@ if (isset($_POST['submit'])) {
 
     function togglePassword() {
       // use ternary operator to show correct display
-      hide ? document.getElementById('showPassword').innerText = globalPassword : document.getElementById('showPassword').innerText = "*".repeat(globalPassword.length)
+      document.getElementById('showPassword').innerText = hide ? globalPassword : "*".repeat(globalPassword.length)
     }
   </script>
 
