@@ -31,6 +31,7 @@ if (isset($_POST['submit'])) {
   </style>
 </head>
 
+<!-- onload page success call toggle function -->
 <body onload="togglePassword()">
 
   <?php
