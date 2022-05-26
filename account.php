@@ -1,5 +1,12 @@
 <?php
 session_start();
+$pass = "";
+$email = "";
+if (isset($_POST['submit'])) {
+  $email = $_POST['email'];
+  $pass = $_POST['pass'];
+}
+
 ?>
 
 <!DOCTYPE HTML>
@@ -25,27 +32,39 @@ session_start();
   </style>
 </head>
 
-<body>
+<body onload="togglePassword()">
 
   <?php
   echo "<h1> Welcome </h1>";
-  $pass = "";
-  $email = "";
   // $stars = starToggle($pass);
   if (isset($_POST['submit'])) {
-    $email = $_POST['email'];
     echo "Username : " . $email . "<br>";
-    $pass = $_POST['pass'];
     echo "Password : " . $pass;
   }
   ?>
-  <!-- Review code -->
-  <div id="showPassword"><?php
-                          echo starToggle($pass) ?></div>
-  <button id="showPassword" onclick="starToggle($pass)">show</button>
+
+  <!-- add code here -->
+  <script>
+    let hide = false;
+    let globalPassword = "<?php echo $pass ?>"
+
+    function togglePassword() {
+      hide ? document.getElementById('showPassword').innerText = globalPassword : document.getElementById('showPassword').innerText = "*".repeat(globalPassword.length)
+    }
+  </script>
+
+  <div id="showPassword"></div>
+
+  <!-- end show result -->
+
+
+
+  <button id="showPassword" onclick="hide = !hide;console.log(hide);togglePassword()">show</button>
   <div class=butt>
     <button onclick="history.back()">Back</button>
   </div>
+
+
   <?php
   function starToggle($pass)
   { {
@@ -59,7 +78,6 @@ session_start();
       return $stars;
     }
     echo "(Hide)Password : " . starToggle($pass);
-    
   }
 
 
